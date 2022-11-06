@@ -1,0 +1,15 @@
+service: pedirPizzas
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: us-east-1
+
+functions:
+  hacerPedido :
+    handler: handler.hacerPedido
+    events:
+      - httpApi: 
+          method: POST
+          path: /pedido
